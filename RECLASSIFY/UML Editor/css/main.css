@@ -1,0 +1,96 @@
+body {
+  font-family: 'PT Serif', serif;
+  font-size: 24px;
+  height:100%;
+  margin-bottom: 30px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-nav li {
+  font-size: 18px;
+}
+
+.text {
+  font-size: 10px;
+  font-weight: normal;
+}
+
+/* Button */
+#delete {
+  margin-right: 30px;
+}
+#esporta {
+  margin-right: 30px;
+}
+#importa {
+  margin-right: 10px;
+}
+#textA {
+  border-radius: 5px;
+  font-size: 16px;
+}
+#modifica {
+  margin-top: -30px;
+}
+
+/* Canvas */
+#canvas {
+  margin-top: 20px;
+  width: 100%;
+  white-space: nowrap;
+}
+
+/* Drag */
+#spanDrag {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 15px;
+}
+
+#draggableElementContainerPaper {
+  border: solid 1px black;
+}
+
+/* Drop */
+#spanDrop {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#paper {
+  border: solid 1px black;
+}
+
+
+.element{
+  top:50%; 
+  left:120%;
+  width:250px;
+  height:420px;
+}
+.link{
+  top:50%; 
+  left:120%;
+  width:250px;
+  height:240px;
+}
+.model-body-element{
+  width:248px;
+  height: 290px;
+}
+
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+
+.close {
+    color: #fff; 
+    opacity: 1;
+}

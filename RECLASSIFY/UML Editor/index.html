@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="it" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RECLASSIFY UML Editor</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/joint.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+</head>
+
+<body>
+
+<nav id="navbar" class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand active" href="index.html">RECLASSIFY UML Editor</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+
+    
+
+
+    <!-- Textarea -->
+    <div class="form-group">
+        <input type="file" id="file_import" style="display: none" onchange="fileImport();">
+        <input type="button" id="fileImport" class="btn btn-info" value="Import">
+        <input type="button" id="fileExport" class="btn btn-success" value="Export">
+        <button type="button" id="deleteAll" class="btn btn-danger">Clear</button>
+        <!--
+        <textarea id="textA" rows="2" cols="50" maxlength="50" placeholder="descrizione..." disabled="true"></textarea>
+        <button type="button" id="modifica" class="btn btn-info" disabled="true">Modifica</button>
+        -->
+    </div>
+
+    <!-- Canvas -->
+    <div id="canvas">
+
+        <!-- Drag area -->
+        <span id="spanDrag">
+            <div id="draggableElementContainerPaper"></div>
+          </span>
+
+        <span></span>
+
+        <!-- Drop Area -->
+        <span id="spanDrop">
+            <div id="paper" ></div>
+          </span>
+    </div>
+
+</div>
+
+<div class="modal fade" id="elementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content element">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Edit Class</h4>
+      </div>
+      <div class="modal-body pre-scrollable model-body-element">
+        <form>
+          <div class="form-group">
+            <label for="classname" class="control-label">classname</label>
+            <input type="text" class="form-control" id="classname">
+          </div>
+          <div class="form-group">
+            <div class="row">
+                <label for="attributes" class="control-label col-md-6">attributes</label>
+                <button type="button" id="attributes-plus" class="close col-md-2" style="margin-top:8px;margin-right: 55px;"><span class="glyphicon glyphicon-plus text-success " aria-hidden="true"></span></button>
+            </div>
+            <!--<input type="text" class="form-control" id="attributes">-->
+            <div id="attributes" class="input-group"></div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+                <label for="methods" class="control-label col-md-4">methods</label>
+                <button type="button" id="methods-plus" class="close col-md-2" style="margin-top:8px;margin-right: 90px;"><span class="glyphicon glyphicon-plus text-success " aria-hidden="true"></span></button>
+            </div>
+            <!--<input type="text" class="form-control" id="methods">-->
+            <div id="methods" class="input-group"></div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="DeleteElement" type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+        <button id="SaveElement" type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="linkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content link">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Edit Link</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="label" class="control-label">label</label>
+            <input type="text" class="form-control" id="label">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="DeleteLink" type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+        <button id="SaveLink" type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Librerie JS -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/lodash.js"></script>
+<script src="js/backbone.js"></script>
+<script src="js/joint.min.js"></script>
+<script src="js/dagre.min.js"></script>
+<script src="js/graphlib.min.js"></script>
+
+<script  src="js/main.js"></script>
+
+
+
+</body>
+</html>
